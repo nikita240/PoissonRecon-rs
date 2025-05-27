@@ -1,0 +1,45 @@
+[package]
+name = "poissonrecon"
+authors = ["Nikita Rushmanov <rush3nik@gmail.com>"]
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/nikita240/PoissonRecon-rs"
+keywords = ["surface", "reconstruction", "poisson", "mesh", "geometry"]
+categories = ["science::geo", "graphics", "api-bindings"]
+readme = "README.md"
+exclude = [".gitmodules", "/assets", "/tests"]
+
+[features]
+default = ["degree_1", "boundary_neumann"]
+
+# Enable compilation of poisson with 1st degree FEM.
+degree_1 = []
+# Enable compilation of poisson with 2nd degree FEM.
+degree_2 = []
+# Enable compilation of poisson with 3rd degree FEM.
+degree_3 = []
+
+# Enable compilation of poisson with free boundary conditions.
+boundary_free = []
+# Enable compilation of poisson with Dirichlet boundary conditions.
+boundary_dirichlet = []
+# Enable compilation of poisson with Neumann boundary conditions.
+boundary_neumann = []
+
+[dependencies]
+bytemuck = "1.23.0"
+derive_builder = "0.20.0"
+nalgebra = { version = "0.33.0", features = ["bytemuck"] }
+thiserror = "1.0.0"
+
+[dev-dependencies]
+bevy = "0.15"
+bevy_panorbit_camera = "0.22"
+ply-rs = "0.1"
+poisson_reconstruction = "0.3.1"
+
+[build-dependencies]
+bindgen = "0.71.1"
+cbindgen = "0.29.0"
+cc = "1.2.23"

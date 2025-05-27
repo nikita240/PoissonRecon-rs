@@ -1,0 +1,26 @@
+name: "CI"
+on:
+  push:
+  pull_request:
+
+jobs:
+  ci:
+    name: ci
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - name: Install Linux dependencies
+        uses: ./.github/actions/install-linux-deps
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: stable
+          components: rustfmt, clippy
+      - run: cargo fmt --all -- --check
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo clippy --all-targets --no-deps -- -D warnings
+      - run: cargo test --no-default-features
+      - run: cargo test
+      - run: cargo test --all-features
+      - run: cargo doc --no-deps
