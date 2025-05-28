@@ -1,5 +1,6 @@
 [package]
 name = "poissonrecon"
+description = "Safe Rust bindings for the Poisson Surface Reconstruction algorithm implemented by Michael Kazhdan"
 authors = ["Nikita Rushmanov <rush3nik@gmail.com>"]
 version = "0.1.0"
 edition = "2024"
@@ -8,7 +9,7 @@ repository = "https://github.com/nikita240/PoissonRecon-rs"
 keywords = ["surface", "reconstruction", "poisson", "mesh", "geometry"]
 categories = ["science::geo", "graphics", "api-bindings"]
 readme = "README.md"
-exclude = [".gitmodules", "/assets", "/tests"]
+exclude = [".gitmodules", "/assets"]
 
 [features]
 default = ["degree_1", "boundary_neumann"]
