@@ -1,3 +1,5 @@
+[![CI](https://github.com/nikita240/PoissonRecon-rs/actions/workflows/ci.yaml/badge.svg)](https://github.com/nikita240/PoissonRecon-rs/actions/workflows/ci.yaml) [![crates.io](https://img.shields.io/crates/v/poissonrecon.svg)](https://crates.io/crates/poissonrecon) [![docs.rs](https://img.shields.io/docsrs/poissonrecon)](https://docs.rs/poissonrecon)
+
 # PoissonRecon-rs
 
 <!-- cargo-rdme start -->
